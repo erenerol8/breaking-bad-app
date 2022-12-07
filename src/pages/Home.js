@@ -6,6 +6,7 @@ import Loading from "../components/Loading";
 import Error from "../components/Error";
 const Home = () => {
   const characters = useSelector((state) => state.characters.items);
+  const nextPages = useSelector((state) => state.characters.page);
   const isLoading = useSelector((state) => state.characters.isLoading);
   const error = useSelector((state) => state.characters.error);
   const dispatch = useDispatch();
@@ -34,7 +35,7 @@ const Home = () => {
         </div>
       ))}
       <div style={{ padding: "20px 0 40px 0", textAlign: "center" }}>
-        <button>Load more page</button>
+        <button>Load more page: ({nextPages})</button>
       </div>
     </div>
   );

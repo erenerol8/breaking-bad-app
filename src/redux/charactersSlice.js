@@ -27,6 +27,7 @@ export const charactersSlice = createSlice({
     [fetchCharacters.fulfilled]: (state, actions) => {
       state.items = actions.payload;
       state.isLoading = false;
+      state.page += 1;
     },
     [fetchCharacters.pending]: (state, actions) => {
       state.isLoading = true;
